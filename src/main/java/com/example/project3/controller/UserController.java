@@ -18,18 +18,20 @@ public class UserController {
 
      @Autowired
      UserServiceImpl obj1;
+
      @GetMapping("/index")
      public String index(){
           return "index";
      }
 
-     @PostMapping("/addUser")
-     public String addUser(@ModelAttribute User user) {
-          obj1.addUser(user);
+     @PostMapping("/index")
+     public String addUser(@ModelAttribute User b) {
+          obj1.addUser(b);
+          System.out.println("User Added");
           return "index";
      }
 
-     @GetMapping("/showAllUsers")
+     @GetMapping("/users")
      public String showAllUsers(Model model) {
           List<User> users = obj1.getAllUsers();
           model.addAttribute("users", users);

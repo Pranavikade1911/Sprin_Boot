@@ -1,105 +1,103 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-     <meta charset="UTF-8">
-     <title>Add User</title>
-     <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"> -->
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 30%; /* Increased width for a better layout */
+            margin: 0 auto;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
 </head>
-<style>
-     body {
-          font-family: Arial, sans-serif;
-          background-color: #f0f0f0;
-          text-align: center;
-     }
-
-     h1 {
-          background-color: #007bff;
-          color: #fff;
-          padding: 10px;
-     }
-
-     form {
-          margin: 20px;
-          padding: 20px;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          width: 20%;
-          margin: 0 auto;
-     }
-
-     form div {
-          margin-bottom: 10px;
-     }
-
-     label {
-          display: block;
-     }
-
-     input,
-     select {
-          width: 100%;
-          padding: 5px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-     }
-
-     button {
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-     }
-
-     a {
-          display: block;
-          margin-top: 20px;
-          text-decoration: none;
-          color: #007bff;
-     }
-</style>
 
 <body>
-     <h1>Add User</h1>
+    <h1>Add User</h1>
 
-     <form th:action="@{/addUser}" th:object="${user}" method="post">
-          <div>
-               <label for="idDetails">ID Details:</label>
-               <select id="idDetails" name="idDetails" th:field="*{idDetails}" required>
-                    <option value="Aadhar Card">Aadhar Card</option>
-                    <option value="PAN Card">PAN Card</option>
-                    <option value="Other ID">Other ID</option>
-               </select>
-          </div>
-          <div>
-               <label for="idNumber">Enter your ID number:</label>
-               <input type="text" id="idNumber" name="idNumber" th:field="*{idNumber}" required>
-          </div>
-          <div>
-               <label for="name">Name:</label>
-               <input type="text" id="name" name="name" th:field="*{name}" required>
-          </div>
-          <div>
-               <label for="contactNumber">Contact Number:</label>
-               <input type="text" id="contactNumber" name="contactNumber" th:field="*{contactNumber}" required>
-          </div>
-          <div>
-               <label for="vaccineName">Vaccine Name:</label>
-               <select id="vaccineName" name="vaccineName" th:field="*{vaccineName}" required>
-                    <option value="Covaxin">Covaxin</option>
-                    <option value="Covishield">Covishield</option>
-                    <option value="Sputnik">Sputnik</option>
-               </select>
-          </div>
-          <div>
-               <button type="submit">Add User</button>
-          </div>
-     </form>
+    <form action="/index" method="post">
+        <div>
+            <label for="idDetails">ID Details:</label>
+            <select id="idDetails" name="idDetails">
+                <option value="Aadhar Card">Aadhar Card</option>
+                <option value="PAN Card">PAN Card</option>
+                <option value="Other ID">Other ID</option>
+            </select>
+        </div>
+        <div>
+            <label for="idNumber">Enter your ID number:</label>
+            <input type="text" id="idNumber" name="idNumber">
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber">
+        </div>
+        <div>
+            <label for="vaccineName">Vaccine Name:</label>
+            <select id="vaccineName" name="vaccineName">
+                <option value="Covaxin">Covaxin</option>
+                <option value="Covishield">Covishield</option>
+                <option value="Sputnik">Sputnik</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Add User</button>
+        </div>
+    </form>
 
-     <a href="./users.html">Show All Users</a>
+    <a href="./users">Show All Users</a> <!-- Corrected the URL here -->
 </body>
-
 </html>

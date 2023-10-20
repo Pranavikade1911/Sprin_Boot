@@ -12,7 +12,7 @@ public class User {
      @GeneratedValue
      private Long id;
      private String idDetails;
-     private String idTypes;
+     private String idNumber;
      private String name;
      private String contactNumber;
      private String vaccineName;
@@ -27,7 +27,7 @@ public class User {
 
      @Override
      public String toString() {
-          return "User [id=" + id + ", idDetails=" + idDetails + ", idTypes=" + idTypes + ", name=" + name
+          return "User [id=" + id + ", idDetails=" + idDetails + ", idTypes=" + idNumber + ", name=" + name
                     + ", contactNumber=" + contactNumber + ", vaccineName=" + vaccineName + "]";
      }
 
@@ -43,11 +43,11 @@ public class User {
      }
 
      public String getIdTypes() {
-          return idTypes;
+          return idNumber;
      }
 
      public void setIdTypes(String idTypes) {
-          this.idTypes = idTypes;
+          this.idNumber = idTypes;
      }
 
      public String getName() {

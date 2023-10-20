@@ -10,5 +10,4 @@ public class Project3Application {
 		SpringApplication.run(Project3Application.class, args);
 		System.out.println("Running Spring Boot Project");
 	}
-
 }
